@@ -23,3 +23,39 @@ end
 
 
 puts "the minimal spread difference is on day:  #{result[:day]}"
+
+
+#------------------------------
+
+team = [
+  {name: "Arsenal", goals_for: 79, goals_against: 36},
+  {name: "Liverpool", goals_for: 67, goals_against: 30},
+  {name: "Manchester_U", goals_for: 87, goals_against: 45},
+  {name: "Newcastle", goals_for: 74, goals_against: 52},
+  {name: "Leeds", goals_for: 53, goals_against: 37},
+  {name: "Chelsea", goals_for: 66, goals_against: 38},
+  {name: "West_Ham", goals_for: 48, goals_against: 57},
+  {name: "Aston_Villa", goals_for: 46, goals_against: 47},
+  {name: "Tottenham", goals_for: 49, goals_against: 53},
+  {name: "Blackburn", goals_for: 55, goals_against: 51},
+  {name: "Southampton", goals_for: 46, goals_against: 54},
+  {name: "Middlesbrough", goals_for: 35, goals_against: 47},
+  {name: "Fulham", goals_for: 36, goals_against: 44},
+  {name: "Charlton", goals_for: 38, goals_against: 49},
+  {name: "Everton", goals_for: 45, goals_against: 57},
+  {name: "Bolton", goals_for: 44, goals_against: 62},
+  {name: "Sunderland", goals_for: 29, goals_against: 51},
+  {name: "Ipswich", goals_for: 41, goals_against: 64},
+  {name: "Derby", goals_for: 33, goals_against: 63},
+  {name: "Leicester", goals_for: 30, goals_against: 64},
+]
+
+def minDifference(team)
+
+  (team[:goals_for] - team[:goals_against]).abs
+end
+
+min_difference_team = team.min_by {|team| minDifference(team)}
+
+puts "the team with the smallest difference is: #{min_difference_team[:name]} with a difference to: #{minDifference(min_difference_team)} goals"
+
